@@ -1,4 +1,5 @@
 
+
 const IS_ABSENT = 0;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -33,7 +34,23 @@ while (totalEmpHrs < MAX_WORKING_HOURS && totalWorkigDays < MAX_WORKING_DAYS) {
 function calculateWage(empHrs) {
     return empHrs * WAGE_PER_HR;
 }
-let totalEmpWage = totalEmpHrs * WAGE_PER_HR;
+let empWage = totalEmpHrs * WAGE_PER_HR;
 console.log("Daily Employee Wage stored in an Array:\n" + empDailyWageArray);
-console.log(" Total Employee Wage : " + totalEmpWage + " Total Employee Work Hours: " + totalEmpHrs
-    + " Total Working Days: " + totalWorkigDays);
+console.log(" Total Employee Wage : " + empWage + "\n Total Employee Work Hours: " + totalEmpHrs
+    + "\n Total Working Days: " + totalWorkigDays);
+
+// For Each Method
+let totalEmpWage = 0;
+function sum(dailyWage) {
+    totalEmpWage += dailyWage;
+}
+empDailyWageArray.forEach(sum);
+console.log("\nUsing ForEach Loop, Total Wage: " + totalEmpWage);
+
+// Reduce Method
+let totalEmpWages = 0;
+function totalWages(totalEmpWages, dailyWage) {
+    return totalEmpWages + dailyWage;
+}
+let totalEmpWageUsingReduce = empDailyWageArray.reduce(totalWages, 0);
+console.log("\nUsing Reduce Method, Total Wage: " + totalEmpWageUsingReduce);
