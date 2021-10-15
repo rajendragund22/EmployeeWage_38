@@ -84,3 +84,19 @@ console.log(fullTimeWageFirstOccurance);
 // Using Every function
 
 console.log("Is fulltimeWageArray truely holds fulltime Wage: " + fullTimeWageArray.every(fullTimeWageDay));
+
+// Check for PartTime Wage 
+
+function partTimeWageDay(dailyWage) {
+    return dailyWage.includes("80");
+}
+
+console.log("Checking for parttimeWage(80) in map Array Present or not:\n" + dayAndDailyWageMapArray.some(partTimeWageDay));
+
+let partTimeWageArray = dayAndDailyWageMapArray.filter(partTimeWageDay);
+console.log("Part timeWage Days:\n" + partTimeWageArray);
+console.log("Is parttimeWageArray truely holds Parttime Wage: " + partTimeWageArray.every(partTimeWageDay));
+
+let partTimeWageFirstOccurance = dayAndDailyWageMapArray.find(partTimeWageDay);
+console.log("\nfirst Occurence of Part Time Wage(80) on :");
+console.log(partTimeWageFirstOccurance);
