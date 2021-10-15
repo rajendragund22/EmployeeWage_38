@@ -1,5 +1,4 @@
-
-
+console.log("Welcome to the Employee Wage Computation Program");
 const IS_ABSENT = 0;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -36,7 +35,7 @@ function calculateWage(empHrs) {
 }
 let empWage = totalEmpHrs * WAGE_PER_HR;
 console.log("Daily Employee Wage stored in an Array:\n" + empDailyWageArray);
-console.log(" Total Employee Wage : " + empWage + "\n Total Employee Work Hours: " + totalEmpHrs
+console.log(" Total Employee Wage : " + empWage + "\n  Total Employee Work Hours: " + totalEmpHrs
     + "\n Total Working Days: " + totalWorkigDays);
 
 // For Each Method
@@ -47,10 +46,22 @@ function sum(dailyWage) {
 empDailyWageArray.forEach(sum);
 console.log("\nUsing ForEach Loop, Total Wage: " + totalEmpWage);
 
-// Reduce Method
+//  Reduce Method
 let totalEmpWages = 0;
 function totalWages(totalEmpWages, dailyWage) {
     return totalEmpWages + dailyWage;
 }
 let totalEmpWageUsingReduce = empDailyWageArray.reduce(totalWages, 0);
 console.log("\nUsing Reduce Method, Total Wage: " + totalEmpWageUsingReduce);
+
+//  Showing Day and DailyWage Using MAP helper function
+
+let counter = 0;
+function dayAndDailyWageMap(dailyWage) {
+    counter++;
+    return counter + " -> " + dailyWage;
+}
+let dayAndDailyWageMapArray = new Array();
+dayAndDailyWageMapArray = empDailyWageArray.map(dayAndDailyWageMap);
+console.log("\nUsing Map Printing Day with DailyWage\n");
+console.log(dayAndDailyWageMapArray);
