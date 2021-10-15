@@ -1,5 +1,6 @@
 console.log("Welcome to the Employee Wage Computation Program");
 
+
 const IS_ABSENT = 0;
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -35,11 +36,11 @@ function calculateWage(empHrs) {
     return empHrs * WAGE_PER_HR;
 }
 let empWage = totalEmpHrs * WAGE_PER_HR;
-console.log("Daily Employee Wage stored in an Array:\n" + empDailyWageArray);
+console.log("Daily Employee Wage stored in Array:\n" + empDailyWageArray);
 console.log(" Total Employee Wage : " + empWage + "\n  Total Employee Work Hours: " + totalEmpHrs
     + "\n Total Working Days: " + totalWorkigDays);
 
-//  Each Method
+// For Each Method
 let totalEmpWage = 0;
 function sum(dailyWage) {
     totalEmpWage += dailyWage;
@@ -55,7 +56,7 @@ function totalWages(totalEmpWages, dailyWage) {
 let totalEmpWageUsingReduce = empDailyWageArray.reduce(totalWages, 0);
 console.log("\nUsing Reduce Method, Total Wage: " + totalEmpWageUsingReduce);
 
-//  Showing Day and DailyWage Using MAP helper function
+// Showing Day and DailyWage Using MAP helper function
 
 let counter = 0;
 function dayAndDailyWageMap(dailyWage) {
@@ -64,7 +65,7 @@ function dayAndDailyWageMap(dailyWage) {
 }
 let dayAndDailyWageMapArray = new Array();
 dayAndDailyWageMapArray = empDailyWageArray.map(dayAndDailyWageMap);
-console.log("\nUsing Map Printing Day with DailyWage\n");
+console.log("\nUsing Map Printing Day with DailyWage.\n");
 console.log(dayAndDailyWageMapArray);
 
 // Filter function
@@ -75,3 +76,9 @@ function fullTimeWageDay(dailyWage) {
 let fullTimeWageArray = dayAndDailyWageMapArray.filter(fullTimeWageDay);
 console.log("\nUsing Filter Storing Only FullTimewage into Array\n");
 console.log(fullTimeWageArray);
+
+//  Find function
+
+let fullTimeWageFirstOccurance = dayAndDailyWageMapArray.find(fullTimeWageDay);
+console.log("\nfirst Occurence of Full Time Wage(160) 0n  :\n");
+console.log(fullTimeWageFirstOccurance);
